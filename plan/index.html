@@ -1,1 +1,406 @@
-placeholder
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="We Sound Crazy | Off-Season Monetization System">
+<meta property="og:description" content="The Crazy Crew build: tiers, masterclasses, filming plan, and launch sequence.">
+<meta property="og:image" content="https://images.squarespace-cdn.com/content/v1/5cb552fad86cc951b6bc6a72/8c4b9be2-cc92-4488-91a0-3f221d42da82/WSC_Clean_Transparent.png">
+<meta property="og:type" content="website">
+
+<title>We Sound Crazy | The Off-Season Monetization System</title>
+<style>
+  :root{
+    --purple-dark:#3C1380; --purple:#6939B4; --purple-light:#9156D3;
+    --bg:#0D0A14; --panel:#171221; --panel2:#1F1830; --line:#2E2444;
+    --text:#EDE9F5; --muted:#A99CC4; --gold:#35C7D6; --green:#5BBD7A;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.6}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 28px}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:50;background:rgba(13,10,20,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;gap:18px;height:60px;overflow-x:auto;white-space:nowrap}
+  nav img{height:34px;flex:0 0 auto}
+  nav a{color:var(--muted);text-decoration:none;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:bold;flex:0 0 auto}
+  nav a:hover{color:var(--gold)}
+
+  /* HERO */
+  header{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+  header .bg{position:absolute;inset:0;background:url('https://d2ol7oe51mr4n9.cloudfront.net/user_36Fi0f1icZYIJPcYFk8uNLKoVJY/a000f85d-7c4a-4ec1-b3a0-8a76c095ec54.jpg') center/cover no-repeat;opacity:.85}
+  header .shade{position:absolute;inset:0;background:linear-gradient(100deg,rgba(13,10,20,.96) 25%,rgba(13,10,20,.55) 60%,rgba(60,19,128,.35))}
+  header .wrap{position:relative;padding:110px 28px 90px}
+  .kicker{color:var(--gold);font-size:13px;letter-spacing:.28em;text-transform:uppercase;font-weight:bold;margin-bottom:18px}
+  h1{font-size:52px;line-height:1.08;font-weight:900;letter-spacing:-.01em;max-width:720px}
+  h1 .accent{color:var(--purple-light)}
+  .sub{margin-top:22px;font-size:19px;color:var(--muted);max-width:640px}
+  .statbar{display:flex;gap:14px;flex-wrap:wrap;margin-top:44px}
+  .stat{background:rgba(23,18,33,.85);border:1px solid var(--line);border-radius:10px;padding:16px 22px;min-width:150px}
+  .stat b{display:block;font-size:26px;color:var(--gold)}
+  .stat span{font-size:12px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+
+  /* SECTIONS */
+  section{padding:78px 0;border-bottom:1px solid var(--line)}
+  .eyebrow{color:var(--purple-light);font-size:12px;letter-spacing:.26em;text-transform:uppercase;font-weight:bold;margin-bottom:10px}
+  h2{font-size:34px;font-weight:900;margin-bottom:18px}
+  h3{font-size:20px;font-weight:bold;margin:26px 0 10px;color:var(--text)}
+  p{color:var(--muted);max-width:820px;margin-bottom:14px}
+  p.lead{font-size:18px;color:var(--text)}
+  .pull{border-left:4px solid var(--gold);background:var(--panel);border-radius:0 10px 10px 0;padding:22px 26px;margin:26px 0;max-width:820px}
+  .pull p{color:var(--text);font-size:19px;font-weight:bold;margin:0}
+
+  /* CARD GRIDS */
+  .grid{display:grid;gap:16px;margin-top:28px}
+  .g3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+  .g2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:24px}
+  .card h4{font-size:16px;margin-bottom:8px;color:var(--text)}
+  .card p{font-size:14px;margin:0}
+  .card .num{font-size:30px;font-weight:900;color:var(--purple-light);display:block;margin-bottom:8px}
+
+  /* TIER LADDER */
+  .tier{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:26px 28px;margin-top:16px;display:grid;grid-template-columns:1fr auto;gap:8px 20px;position:relative;overflow:hidden}
+  .tier.flagship{border-color:var(--gold);background:linear-gradient(135deg,var(--panel) 60%,rgba(53,199,214,.08))}
+  .tier.locked{opacity:.92;background:linear-gradient(135deg,var(--panel) 70%,rgba(105,57,180,.10))}
+  .tier .name{font-size:22px;font-weight:900}
+  .tier .price{font-size:26px;font-weight:900;color:var(--purple-light);text-align:right}
+  .tier.flagship .price{color:var(--gold)}
+  .tier .tag{font-style:italic;color:var(--muted);font-size:15px;grid-column:1/-1}
+  .tier ul{grid-column:1/-1;list-style:none;margin-top:10px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:6px 22px}
+  .tier li{font-size:14px;color:var(--muted);padding-left:18px;position:relative}
+  .tier li:before{content:"";position:absolute;left:0;top:8px;width:7px;height:7px;border-radius:50%;background:var(--purple-light)}
+  .tier.flagship li:before{background:var(--gold)}
+  .badge{display:inline-block;font-size:11px;font-weight:bold;letter-spacing:.12em;text-transform:uppercase;border-radius:20px;padding:5px 14px;margin-bottom:12px}
+  .badge.live{background:rgba(91,189,122,.15);color:var(--green);border:1px solid rgba(91,189,122,.4)}
+  .badge.gate{background:rgba(145,86,211,.14);color:var(--purple-light);border:1px solid rgba(145,86,211,.4)}
+  .badge.gold{background:rgba(53,199,214,.14);color:var(--gold);border:1px solid rgba(53,199,214,.4)}
+  .dnote{grid-column:1/-1;margin-top:12px;font-size:13px;color:var(--muted);border-top:1px dashed var(--line);padding-top:12px}
+  .dnote b{color:var(--purple-light)}
+  .tier.flagship .dnote b{color:var(--gold)}
+
+  /* TABLES */
+  table{width:100%;border-collapse:collapse;margin-top:24px;font-size:14px}
+  th{background:var(--purple-dark);color:#fff;text-align:left;padding:12px 14px;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase}
+  td{padding:12px 14px;border-bottom:1px solid var(--line);color:var(--muted);vertical-align:top}
+  td:first-child{color:var(--text);font-weight:bold}
+  tr.hl td{background:rgba(105,57,180,.12);color:var(--text)}
+  .scroll{overflow-x:auto}
+
+  /* TIMELINE */
+  .timeline{margin-top:28px;border-left:2px solid var(--purple);padding-left:28px}
+  .tstep{position:relative;padding-bottom:30px}
+  .tstep:before{content:"";position:absolute;left:-37px;top:4px;width:16px;height:16px;border-radius:50%;background:var(--purple-light);border:3px solid var(--bg)}
+  .tstep.gold:before{background:var(--gold)}
+  .tstep h4{font-size:17px;margin-bottom:6px}
+  .tstep .when{font-size:12px;color:var(--gold);letter-spacing:.14em;text-transform:uppercase;font-weight:bold}
+  .tstep p{font-size:14px;margin:6px 0 0}
+
+  /* CASE STUDIES */
+  .case{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:26px;margin-top:16px}
+  .case h4{font-size:18px;margin-bottom:4px}
+  .case .src{font-size:12px;color:var(--purple-light);letter-spacing:.1em;text-transform:uppercase;font-weight:bold}
+  .case p{font-size:14px;margin-top:10px}
+  .case .apply{margin-top:14px;padding:14px 16px;background:rgba(53,199,214,.07);border-left:3px solid var(--gold);border-radius:0 8px 8px 0}
+  .case .apply p{margin:0;color:var(--text)}
+  .case .apply b{color:var(--gold)}
+
+  /* RHYTHM STRIP */
+  .rhythm{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:24px}
+  .week{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:18px}
+  .week b{color:var(--purple-light);display:block;font-size:12px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:8px}
+  .week span{font-size:14px;color:var(--text)}
+
+  footer{padding:50px 0 70px;text-align:center}
+  footer p{margin:0 auto;font-size:13px}
+  footer .logos{margin-bottom:16px;font-weight:900;letter-spacing:.2em;font-size:14px;color:var(--purple-light);text-transform:uppercase}
+
+  @media(max-width:640px){
+    h1{font-size:36px} h2{font-size:27px}
+    header .wrap{padding:70px 20px 60px}
+    .tier{grid-template-columns:1fr}
+    .tier .price{text-align:left}
+  }
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <img src="https://images.squarespace-cdn.com/content/v1/5cb552fad86cc951b6bc6a72/8c4b9be2-cc92-4488-91a0-3f221d42da82/WSC_Clean_Transparent.png" alt="We Sound Crazy" onerror="this.style.display='none'">
+  <a href="#vision">Vision</a>
+  <a href="#tiers">Tiers</a>
+  <a href="#engine">Content Engine</a>
+  <a href="#filming">Filming</a>
+  <a href="#launch">Launch</a>
+  <a href="#models">Success Models</a>
+  <a href="#revenue">Revenue</a>
+  <a href="#orchestration">Orchestration</a>
+</div></nav>
+
+<header>
+  <div class="bg"></div><div class="shade"></div>
+  <div class="wrap">
+    <div class="kicker">We Sound Crazy x Patreon &nbsp;|&nbsp; Off-Season 2026</div>
+    <h1>From Bonus Content to <span class="accent">Education Platform</span></h1>
+    <p class="sub">The off-season plan that turns four proven hitmakers into the music industry's most accessible faculty, and turns the Crazy Crew into a compounding membership business.</p>
+    <div class="statbar">
+      <div class="stat"><b>6</b><span>Tier system</span></div>
+      <div class="stat"><b>12</b><span>Masterclasses / yr</span></div>
+      <div class="stat"><b>2</b><span>Batch shoot days</span></div>
+      <div class="stat"><b>$7.7K</b><span>Target MRR, month 12</span></div>
+      <div class="stat"><b>6.5 hrs</b><span>Host time / month</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="vision"><div class="wrap">
+  <div class="eyebrow">01 &mdash; The Strategic Shift</div>
+  <h2>Stop selling extra content. Start selling the industry.</h2>
+  <p class="lead">Patreon stops being a tip jar for superfans and becomes the only place where fans, aspiring artists, songwriters, producers, and future executives learn directly from the people who shaped the records they grew up on.</p>
+  <div class="pull"><p>"The music industry finally opened its office door. Learn the business from four people who run it, live, every month."</p></div>
+  <p>The faculty is already secured. Seven Grammy nominations between Chuck Harmony and Claude Kelly. An NAACP Image Award. A major label SVP office held by Phil Thornton. Sony Music label operations run by Tamone Bacon. Credits across Michael Jackson, Rihanna, Bruno Mars, Britney Spears, Whitney Houston, and Mary J. Blige. An Emmy nominated TV show on FOX SOUL, a Sirius XM radio show, and six produced seasons with a guest list the industry envies.</p>
+  <div class="grid g3">
+    <div class="card"><span class="num">$25+</span><h4>Education prices, not entertainment prices</h4><p>Entertainment subscriptions cap near $15 because free alternatives exist. Education from credentialed instructors commands $25 to $250 because the alternative is a $30,000 degree or years of trial and error.</p></div>
+    <div class="card"><span class="num">&infin;</span><h4>Content that compounds</h4><p>A masterclass filmed this month sells to every future member at zero marginal cost. Bonus clips decay in days. How Royalties Work is evergreen for years.</p></div>
+    <div class="card"><span class="num">12+</span><h4>The library becomes the moat</h4><p>Every month adds a class. By month 12 the catalog alone justifies the subscription, before a single live perk is counted.</p></div>
+  </div>
+</div></section>
+
+<section id="tiers"><div class="wrap">
+  <div class="eyebrow">02 &mdash; The Six-Tier Architecture</div>
+  <h2>Three tiers live on day one. Three unlock as the Crew grows.</h2>
+  <p>Launching a $100 tier to a small member base produces empty rooms and a visibly dead VIP lane. Gating the top tiers behind member milestones converts the same fact into scarcity, and the whole community works together to unlock the next level.</p>
+
+  <div class="tier">
+    <div style="grid-column:1/-1"><span class="badge live">Live Day 1</span></div>
+    <div class="name">1. Soundcheck</div><div class="price">$5/mo</div>
+    <div class="tag">"Get in before everyone else."</div>
+    <ul><li>Early access to every episode, 48 hours ahead</li><li>Ad-free episodes</li><li>Bonus clips and extended interviews</li><li>Members-only community posts and Chats</li><li>Polls that choose guests and questions</li></ul>
+    <div class="dnote"><b>Design note:</b> the existing paid tier renamed. Current members map here automatically at the same price. Nobody loses anything.</div>
+  </div>
+
+  <div class="tier">
+    <div style="grid-column:1/-1"><span class="badge live">Live Day 1</span></div>
+    <div class="name">2. Backstage Pass</div><div class="price">$12/mo</div>
+    <div class="tag">"Go behind the conversation."</div>
+    <ul><li>Everything in Soundcheck</li><li>Behind-the-scenes videos and unreleased stories</li><li>Pre-show and post-show conversations</li><li>Monthly livestream hangout, rotating hosts</li><li>Producer Commentary: hosts riff on a classic episode</li><li>Early merch access and guest Q&amp;A submissions</li></ul>
+    <div class="dnote"><b>Design note:</b> priced at the top of the hosts' range because fixed payment fees hit small transactions hardest. At $5 about 9% goes to processing; at $12 about 5.4%.</div>
+  </div>
+
+  <div class="tier flagship">
+    <div style="grid-column:1/-1"><span class="badge gold">Live Day 1 &mdash; The Flagship</span></div>
+    <div class="name">3. Studio Session</div><div class="price">$25/mo</div>
+    <div class="tag">"Learn the industry from the people who run it."</div>
+    <ul><li>Everything in Backstage Pass</li><li>One exclusive masterclass every month, chaptered, with worksheet</li><li>The full masterclass library, growing monthly</li><li>Album Club: hosts break down a classic album monthly</li><li>Lyric Breakdown, Producer Breakdown, Contract Breakdown</li><li>Ask an Executive: monthly on-camera Q&amp;A</li></ul>
+    <div class="dnote"><b>Design note:</b> every dollar of marketing and every on-air CTA points here. Founding offer: first 50 members lock $19/mo for 12 months. Target tier mix: 30 to 40% of all members within 6 months.</div>
+  </div>
+
+  <div class="tier locked">
+    <div style="grid-column:1/-1"><span class="badge gate">Unlocks at 75 paid members</span></div>
+    <div class="name">4. Platinum Records Club</div><div class="price">$50/mo</div>
+    <div class="tag">"Get in the room."</div>
+    <ul><li>Everything in Studio Session</li><li>Monthly members-only Zoom: office hours, live Q&amp;A, contract talk</li><li>Demo Breakdown submission rights</li><li>Occasional guest appearances in session</li></ul>
+    <div class="dnote"><b>Design note:</b> demo reviews publish to Studio Session members too. The $25 members watch, want their own song reviewed, and upgrade. Every format creates pressure toward the tier above it.</div>
+  </div>
+
+  <div class="tier locked">
+    <div style="grid-column:1/-1"><span class="badge gate">Unlocks at 150 paid members</span></div>
+    <div class="name">5. Executive Producer Circle</div><div class="price">$100/mo</div>
+    <div class="tag">"Become part of the show."</div>
+    <ul><li>Everything in Platinum</li><li>Quarterly small-group Zoom, 20 to 30 people, rotating hosts</li><li>Name in the episode credits</li><li>VIP channel, signed merch drop, exclusive livestreams</li><li>Annual virtual event invitation</li></ul>
+    <div class="dnote"><b>Design note:</b> the credits roll costs nothing and is the most talked-about perk at this level anywhere on Patreon. Extend it to the TV broadcast if FOX SOUL allows.</div>
+  </div>
+
+  <div class="tier locked">
+    <div style="grid-column:1/-1"><span class="badge gold">Waitlist opens Day 1 &mdash; Hard cap 25</span></div>
+    <div class="name">6. Hitmakers Circle</div><div class="price">$250/mo</div>
+    <div class="tag">"Private counsel from the people who made the hits."</div>
+    <ul><li>Everything in Executive Producer Circle</li><li>Quarterly private 1:1 office hour with a rotating host</li><li>Priority questions in every live session</li><li>First rights to annual experiences: song camp, studio tour, dinner</li></ul>
+    <div class="dnote"><b>Design note:</b> 25 members at 20 minutes quarterly is roughly 40 minutes per host per month. At capacity this single tier is $6,250/mo. The waitlist is the marketing. When a member outgrows 20 minutes a quarter, that is the natural doorway into private consulting off-platform.</div>
+  </div>
+</div></section>
+
+<section id="engine"><div class="wrap">
+  <div class="eyebrow">03 &mdash; The Monthly Content Engine</div>
+  <h2>One format, one owner, one cadence. Nothing ships without all three.</h2>
+  <p>The engine runs on a repeatable monthly rhythm. Format owner means the host accountable for that content existing on schedule. WSC's internal posting team handles publishing and platform posts.</p>
+  <div class="rhythm">
+    <div class="week"><b>Week 1</b><span>Masterclass drop + free 3-min preview to socials</span></div>
+    <div class="week"><b>Week 2</b><span>Album Club roundtable</span></div>
+    <div class="week"><b>Week 3</b><span>Breakdown series + monthly livestream</span></div>
+    <div class="week"><b>Week 4</b><span>Ask an Executive + Producer Commentary</span></div>
+  </div>
+  <div class="scroll">
+  <table>
+    <tr><th>Format</th><th>Cadence</th><th>Tier home</th><th>Format owner</th></tr>
+    <tr><td>Masterclass</td><td>Monthly</td><td>$25 Studio Session</td><td>Rotating host, filmed in quarterly batches</td></tr>
+    <tr><td>Album Club</td><td>Monthly</td><td>$25 Studio Session</td><td>All four hosts</td></tr>
+    <tr><td>Lyric Breakdown</td><td>Monthly</td><td>$25 Studio Session</td><td>Claude</td></tr>
+    <tr><td>Producer Breakdown</td><td>Monthly</td><td>$25 Studio Session</td><td>Chuck</td></tr>
+    <tr><td>Contract Breakdown</td><td>Bi-monthly</td><td>$25 Studio Session</td><td>Phil + Tamone</td></tr>
+    <tr><td>Ask an Executive</td><td>Monthly</td><td>$25 Studio Session</td><td>Rotating host</td></tr>
+    <tr><td>Producer Commentary</td><td>Monthly</td><td>$12 Backstage Pass</td><td>Any two hosts</td></tr>
+    <tr><td>Monthly livestream</td><td>Monthly</td><td>$12 Backstage Pass</td><td>Rotating host</td></tr>
+    <tr><td>Members Zoom</td><td>Monthly</td><td>$50 Platinum</td><td>Rotating host pair</td></tr>
+    <tr><td>Demo Breakdown</td><td>Monthly</td><td>$50 submit, $25 watch</td><td>All four hosts</td></tr>
+    <tr><td>Small-group Zoom</td><td>Quarterly</td><td>$100 EP Circle</td><td>Rotating host</td></tr>
+    <tr><td>1:1 office hours</td><td>Quarterly</td><td>$250 Hitmakers</td><td>All four, rotating roster</td></tr>
+  </table>
+  </div>
+
+  <h3>The 12-month masterclass curriculum</h3>
+  <div class="scroll">
+  <table>
+    <tr><th>Month</th><th>Masterclass</th><th>Instructor</th></tr>
+    <tr><td>1</td><td>How Royalties Work</td><td>Phil</td></tr>
+    <tr><td>2</td><td>Songwriter Splits</td><td>Claude</td></tr>
+    <tr><td>3</td><td>How Hit Songs Get Placed</td><td>Chuck</td></tr>
+    <tr><td>4</td><td>The Business of a Release</td><td>Tamone</td></tr>
+    <tr><td>5</td><td>Music Publishing 101</td><td>Phil</td></tr>
+    <tr><td>6</td><td>Getting Your First Placement</td><td>Chuck</td></tr>
+    <tr><td>7</td><td>Producer Agreements</td><td>Chuck + Phil</td></tr>
+    <tr><td>8</td><td>Artist Development</td><td>Claude</td></tr>
+    <tr><td>9</td><td>Building Industry Relationships</td><td>Tamone</td></tr>
+    <tr><td>10</td><td>Sync Licensing</td><td>Phil</td></tr>
+    <tr><td>11</td><td>Touring Business</td><td>Guest instructor + host</td></tr>
+    <tr><td>12</td><td>The Modern Label Deal</td><td>All four, finale format</td></tr>
+  </table>
+  </div>
+</div></section>
+
+<section id="filming"><div class="wrap">
+  <div class="eyebrow">04 &mdash; The Filming Plan</div>
+  <h2>Two batch days this month bank an entire quarter of content.</h2>
+  <p>The hosts are busy men. The system respects that by batching: film once, publish for months. After these two days, the next shoot is 8 to 10 weeks away. Full hour-by-hour run-of-shows live in the production calendar spreadsheet.</p>
+  <div class="grid g2">
+    <div class="card">
+      <h4 style="color:var(--gold);font-size:18px">Batch Day 1: The Masterclass Day</h4>
+      <p style="margin-top:10px">Four masterclasses in one day, one per host: How Royalties Work (Phil), Songwriter Splits (Claude), How Hit Songs Get Placed (Chuck), The Business of a Release (Tamone). Final hour: the 90-second education platform trailer with all four hosts, plus a 3-minute free preview per class for the social funnel.</p>
+    </div>
+    <div class="card">
+      <h4 style="color:var(--gold);font-size:18px">Batch Day 2: The Series Day</h4>
+      <p style="margin-top:10px">Album Club episodes on Thriller and Miseducation. Producer Commentary on last season's most-viewed episode. Ask an Executive episode one. Then split units: Chuck films Producer Breakdown while Phil and Tamone film Contract Breakdown in parallel. Casual BTS capture throughout.</p>
+    </div>
+  </div>
+  <div class="pull"><p>What this banks: 4 masterclasses, 2 Album Clubs, 1 Commentary, 1 Ask an Executive, 1 Producer Breakdown, 1 Contract Breakdown, 2 Lyric Breakdowns, the launch trailer, and 4 social previews. A full quarter of flagship content before a single member is asked to upgrade.</p></div>
+  <p><b style="color:var(--gold)">Production rule with zero exceptions:</b> everything uploads native to Patreon. No external embeds, no password-protected players. That exact failure already cost a paying member in May.</p>
+</div></section>
+
+<section id="launch"><div class="wrap">
+  <div class="eyebrow">05 &mdash; The Launch Sequence</div>
+  <h2>Bank first. Announce once. Drum monthly. Unlock together.</h2>
+  <div class="timeline">
+    <div class="tstep">
+      <div class="when">Phase 0 &mdash; Before announcing anything</div>
+      <h4>Quiet foundation</h4>
+      <p>Password issue verified dead from a member account. Both batch days filmed and edited. Tiers rebuilt: Soundcheck rename, Backstage Pass, Studio Session. Collections built for every series. Hitmakers waitlist page live.</p>
+    </div>
+    <div class="tstep gold">
+      <div class="when">Phase 1 &mdash; Launch week</div>
+      <h4>One loud week</h4>
+      <p>Trailer pinned public. Masterclass 1 and Album Club 1 drop the same day so the flagship opens with visible depth. Founding offer: first 50 Studio Session members lock $19/mo for 12 months. All four hosts post the trailer and their own class preview to personal socials. Every link points to the web, never the iOS app where Apple takes 30%.</p>
+    </div>
+    <div class="tstep">
+      <div class="when">Phase 2 &mdash; Weeks 2 to 12</div>
+      <h4>The drumbeat</h4>
+      <p>One masterclass per month with free previews. Weekly rhythm holds: masterclass, Album Club, breakdown, Ask an Executive. Monthly livestream. Public progress tracker toward the 75-member Platinum unlock, so the community unlocks it together.</p>
+    </div>
+    <div class="tstep">
+      <div class="when">Phase 3 &mdash; Milestone unlocks</div>
+      <h4>Member-count driven, never date driven</h4>
+      <p>75 paid: Platinum opens, first Zoom within 3 weeks, demo submissions open. 150 paid: Executive Producer Circle opens, credits roll updated. Waitlist at 15+: Hitmakers opens in order, capped at 25.</p>
+    </div>
+  </div>
+</div></section>
+
+<section id="models"><div class="wrap">
+  <div class="eyebrow">06 &mdash; Success Models</div>
+  <h2>The playbook is proven. WSC runs it with better credentials.</h2>
+  <p>Four creator models shaped this plan. Each one contributes a mechanic that WCG will manage into the WSC system.</p>
+
+  <div class="case">
+    <div class="src">Model 1 &mdash; The Joe Budden Podcast, Patreon's #1 earner</div>
+    <h4>Own the audience, ladder the access</h4>
+    <p>Budden left platform deals to own his content and audience directly, reportedly clearing $1M/month on Patreon with a simple $5/$10/$25/$50 ladder, patron-only episodes, and a Discord community his members refuse to leave. His core insight: the community IS the product; the content is the invitation.</p>
+    <div class="apply"><p><b>WSC application:</b> the tier ladder mirrors this proven price architecture, then extends two premium rungs Budden never built, because Budden cannot break down a label release plan or play you the demo that became a Rihanna record. Chats live from day one; community becomes the retention engine.</p></div>
+  </div>
+
+  <div class="case">
+    <div class="src">Model 2 &mdash; Rick Beato, 5.7M subscribers</div>
+    <h4>Teach free, build trust, sell the depth</h4>
+    <p>Beato built the biggest music education audience on YouTube by giving away theory lessons, then productized depth: a $99 ear training program and paid courses. The funnel is free mass education into paid structured learning.</p>
+    <div class="apply"><p><b>WSC application:</b> every masterclass ships a free 3-minute preview to socials. The main show remains the free top of funnel. The full class, the library, and the worksheets live at $25. Later, evergreen classes can be repackaged as standalone $99+ courses for buyers who will never subscribe.</p></div>
+  </div>
+
+  <div class="case">
+    <div class="src">Model 3 &mdash; Top political and comedy podcasts (Chapo Trap House, TrueAnon)</div>
+    <h4>Relentless cadence beats production polish</h4>
+    <p>The highest-earning podcast Patreons win on one variable above all: a bonus episode lands every single week, on schedule, for years. Members subscribe to a rhythm, not a highlight reel.</p>
+    <div class="apply"><p><b>WSC application:</b> the weekly rhythm (masterclass, Album Club, breakdown, Ask an Exec) guarantees every member sees fresh value weekly at every tier, and batch production makes the cadence sustainable for four busy executives. The calendar is the contract.</p></div>
+  </div>
+
+  <div class="case">
+    <div class="src">Model 4 &mdash; Community-chat creators (The Girls Bathroom and peers)</div>
+    <h4>The group chat is the churn killer</h4>
+    <p>Creators running active member chats report roughly 50% monthly participation, and cite the chat, not the content, as the reason members stay. Patreon's own retention data says the same: community access correlates with sub-5% monthly churn.</p>
+    <div class="apply"><p><b>WSC application:</b> Chats opens with the relaunch, hosts drop in twice a week on a rotation WCG schedules, and every live event funnels back into the chat. Retention is managed as its own workstream, not a hoped-for side effect.</p></div>
+  </div>
+</div></section>
+
+<section id="revenue"><div class="wrap">
+  <div class="eyebrow">07 &mdash; The Revenue Model</div>
+  <h2>Conservative to target, month 6 and month 12.</h2>
+  <p>Gross monthly recurring revenue before platform and processing fees. F marks founding-member pricing blended into the Studio Session average.</p>
+  <div class="scroll">
+  <table>
+    <tr><th>Tier</th><th>Price</th><th>Conservative M6</th><th>Moderate M6</th><th>Target M12</th></tr>
+    <tr><td>Soundcheck</td><td>$5</td><td>40 ($200)</td><td>60 ($300)</td><td>120 ($600)</td></tr>
+    <tr><td>Backstage Pass</td><td>$12</td><td>15 ($180)</td><td>25 ($300)</td><td>50 ($600)</td></tr>
+    <tr><td>Studio Session</td><td>$25 / $19F</td><td>20 ($440)</td><td>40 ($880)</td><td>80 ($1,760)</td></tr>
+    <tr><td>Platinum Records Club</td><td>$50</td><td>0 (locked)</td><td>8 ($400)</td><td>20 ($1,000)</td></tr>
+    <tr><td>Executive Producer Circle</td><td>$100</td><td>0 (locked)</td><td>0 (locked)</td><td>8 ($800)</td></tr>
+    <tr><td>Hitmakers Circle</td><td>$250</td><td>0 (waitlist)</td><td>3 ($750)</td><td>12 ($3,000)</td></tr>
+    <tr class="hl"><td>Monthly gross MRR</td><td></td><td>$820</td><td>$2,630</td><td>$7,760</td></tr>
+  </table>
+  </div>
+  <p style="margin-top:18px">Even the conservative case is a 13x improvement on the current baseline. The month-12 target annualizes to roughly $75,000 net of fees, before the off-platform consulting lane, ticketed annual experiences, or YouTube Memberships in Phase 2.</p>
+  <div class="grid g3">
+    <div class="card"><span class="num">$10-30K</span><h4>Song camp weekend</h4><p>20 seats at $500 to $1,500 with the four hosts as faculty. Annual experiences are ticketed on top of subscriptions, never baked into tiers. Members at $50+ get first access windows.</p></div>
+    <div class="card"><span class="num">$6,250</span><h4>Hitmakers at capacity</h4><p>25 members at $250. One tier, capped, quarterly 1:1s, roughly 40 minutes per host per month at full load.</p></div>
+    <div class="card"><span class="num">$2,000+</span><h4>The consulting doorway</h4><p>Executive Sessions remains a separate off-platform product. Hitmakers members who outgrow 20 minutes a quarter are its natural pipeline.</p></div>
+  </div>
+</div></section>
+
+<section id="orchestration"><div class="wrap">
+  <div class="eyebrow">08 &mdash; How WCG Orchestrates</div>
+  <h2>Talent secured. Machine managed.</h2>
+  <p class="lead">The hosts own the content and the relationships. WSC's internal team owns posting. WCG owns the machine: calendar, pipeline, measurement, and the discipline that keeps a four-executive side project shipping like a media company.</p>
+  <div class="grid g2">
+    <div class="card"><h4>The production calendar is the contract</h4><p>WCG maintains the module backlog, books batch days, tracks every deliverable from Not scheduled through Published, and protects the weekly drop rhythm that the success models prove matters most.</p></div>
+    <div class="card"><h4>The workload budget is the guardrail</h4><p>6.5 hours per host per month at full build-out. Any proposed perk that adds recurring host hours without a price increase or milestone attached waits. This is how the system survives contact with four full calendars.</p></div>
+    <div class="card"><h4>Unlocks are mechanical, not emotional</h4><p>75 paid opens Platinum. 150 opens the EP Circle. A 15-person waitlist opens Hitmakers. Nobody has to make a judgment call under enthusiasm, and nobody overcommits early.</p></div>
+    <div class="card"><h4>The scoreboard reviews quarterly</h4><p>Thirty minutes, four hosts plus Aaron: tier mix, churn, play rates, workload actuals. Underperforming formats get fixed or killed before the catalog bloats. Wins get doubled.</p></div>
+  </div>
+  <h3>The scoreboard</h3>
+  <div class="scroll">
+  <table>
+    <tr><th>Metric</th><th>Watch weekly</th><th>Healthy looks like</th></tr>
+    <tr><td>Paid members + tier mix</td><td>Total and per tier</td><td>Studio Session trending toward 30-40% of members</td></tr>
+    <tr><td>Play rate</td><td>Plays / seen per post</td><td>Above 12% and climbing after thumbnail-title fixes</td></tr>
+    <tr><td>Chat participation</td><td>Weekly active members in Chats</td><td>40%+ of paid members active monthly</td></tr>
+    <tr><td>Churn</td><td>Cancels by tier + exit reasons</td><td>Under 5% monthly; zero benefit-delivery complaints</td></tr>
+    <tr><td>Funnel</td><td>Traffic sources + conversion</td><td>Instagram and show CTAs visible in Patreon traffic; web signups dominating iOS</td></tr>
+  </table>
+  </div>
+  <div class="pull"><p>The single most important date to set this week is Batch Day 1. Every other date in the system keys off when those four masterclasses get filmed.</p></div>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="logos">We Sound Crazy &nbsp;&times;&nbsp; Walton Creative Group</div>
+  <p>Off-Season Monetization System &nbsp;|&nbsp; August 2026 &nbsp;|&nbsp; Companion files: WSC_OffSeason_Monetization_System.docx and WSC_Production_Calendar.xlsx</p>
+</div></footer>
+
+</body>
+</html>
